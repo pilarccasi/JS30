@@ -3,3 +3,26 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
 }
+.key {
+    border: 2px solid black;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin: 3%;
+    background-color: black;
+    display: inline-block;
+    transition: all 1s;
+}
+kbd {
+    color: white;
+    font-size: 30px;
+    margin: inherit;
+}
+div.sound {
+        color: white;
+}
+.playing {
+    border: 2px solid yellow;
+    opacity: 0.7;
+}
