@@ -1,28 +1,49 @@
-body {
-    background-image: url(fondo.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
+html {
+  font-size: 10px;
+  background: url(fondo.jpg) bottom center;
+  background-size: cover;
 }
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
 .key {
-    border: 2px solid black;
-    text-align: center;
-    width: 60px;
-    height: 60px;
-    float: left;
-    margin: 3%;
-    background-color: black;
-    display: inline-block;
-    transition: all 1s;
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 8rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
 }
-kbd {
-    color: white;
-    font-size: 30px;
-    margin: inherit;
-}
-div.sound {
-        color: white;
-}
+
 .playing {
-    border: 2px solid yellow;
-    opacity: 0.7;
+  transform: scale(1.1);
+  border-color: #B03A2E;
+  box-shadow: 0 0 1rem #B03A2E;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  color: #ffc600;
 }
