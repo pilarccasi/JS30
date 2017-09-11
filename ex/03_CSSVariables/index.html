@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playing with CSS Variables wih JS</title>
+</head>
+<body>
+    <h2>Update CSS Variables with <span class="h1">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px"/>
+
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px"/>
+
+        <label for=base>Base Color</label>
+        <input type="color" name="base" value="red"/>
+    </div>
+    <img src="http://photos.visitphilly.com/PhillySkyline2010_05-B.Krist-1200VP.jpg"/>
+
+
+</body>
+
+<style>
+    :root {
+        --base: red;
+        --spacing: 10px;
+        --blur: 10px;
+    }
+    html {
+        background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+        text-align: center;
+        font-size: 10px;
+        width: 100%;
+        height: 100vh;
+    }
+    body {
+        text-align: center;
+        color: white;
+        font-family: 'helvetica neue', sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+    }
+    img {
+        width: 60%;
+        margin-top: 20px;
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+    }
+    .h1 {
+        color: var(--base);
+    }
+    input {
+      width:100px;
+    }
+
+</style>
+
+<script>
+    var inputs = document.querySelectorAll('.controls input');
+    console.log(inputs);
+
+    function handleUpdate () {
+        console.log(this.value);
+    }
+
+    inputs.forEach(input => input.addEventListener ('change', handleUpdate))
+
+</script>
